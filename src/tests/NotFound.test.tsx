@@ -15,20 +15,4 @@ describe('Teste o componente <NotFound.tsx />', () => {
     const imgPageNotFound = screen.getByRole('img') as HTMLImageElement;
     expect(imgPageNotFound.src).toBe('http://localhost:3000/404.gif');
   });
-
-  it.skip('', () => {
-
-  });
-
-  it.skip('', () => {
-
-  });
-
-  it.skip('', () => {
-
-  });
-
-  it.skip('', () => {
-
-  });
 });
