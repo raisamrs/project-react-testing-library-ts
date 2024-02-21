@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 import pokemonList from '../data';
@@ -63,32 +63,37 @@ describe('Teste o componente <Pokedex.tsx />', () => {
     expect(btnDragon).toBeInTheDocument();
   });
 
-  it('5. O texto do botão deve corresponder ao nome do tipo do pokémon', () => {
+  it('5. O texto do botão deve corresponder ao nome do tipo do pokémon', async () => {
     const { user } = renderWithRouter(<App />);
 
-    for (let i = 0; i < 7; i += 1) {
-      const btnTypeElement = screen.getByTestId('pokemon-type-button');
+    const btnTypeElements = screen.getAllByTestId('pokemon-type-button');
+    await Promise.all(btnTypeElements.map(async (btnTypeElement) => {
       user.click(btnTypeElement);
-      const btnTypeName = btnTypeElement.textContent;
-      const pokemonTypeElement = screen.getByTestId('pokemon-type');
-      const pokemonType = pokemonTypeElement.textContent;
-      expect(btnTypeName).toEqual(pokemonType);
-    }
-    /*     const btnEletric = screen.getByRole('button', { name: /electric/i });
-        user.click(btnEletric);
-        const btnFire = screen.getByRole('button', { name: /fire/i });
-        const btnBug = screen.getByRole('button', { name: /bug/i });
-        const btnPoison = screen.getByRole('button', { name: /poison/i });
-        const btnPsychic = screen.getByRole('button', { name: /psychic/i });
-        const btnNormal = screen.getByRole('button', { name: /normal/i });
-        const btnDragon = screen.getByRole('button', { name: /dragon/i }); */
+
+      await waitFor(() => {
+        const btnTypeName = btnTypeElement.textContent;
+        const pokemonTypeElement = screen.getByTestId('pokemon-type');
+        const pokemonType = pokemonTypeElement.textContent;
+        expect(btnTypeName).toEqual(pokemonType);
+      });
+    }));
   });
 
-  it.skip('6. O botão "All" deve estar sempre visível', () => {
+  it('6. A pokédex deve conter um botão "All" para resetar o filtro', async () => {
+    const { user } = renderWithRouter(<App />);
 
-  });
+    const btnBug = screen.getByRole('button', { name: /bug/i });
+    await user.click(btnBug);
 
-  it.skip('7. A pokédex deve conter um botão para resetar o filtro', () => {
+    const btnBugText = btnBug.textContent;
+    const pokemonBugType = screen.getByTestId('pokemon-type');
+    const pokemonBugTypeText = pokemonBugType.textContent;
+    expect(btnBugText).toEqual(pokemonBugTypeText);
+    const btnNextPokemon = screen.getByRole('button', { name: /próximo pokémon/i });
+    expect(btnNextPokemon).toBeDisabled();
 
+    const btnAll = screen.getByRole('button', { name: /all/i });
+    await user.click(btnAll);
+    expect(btnNextPokemon).not.toBeDisabled();
   });
 });
