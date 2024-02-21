@@ -52,7 +52,7 @@ describe('Teste o componente <PokemonDetails.tsx />', () => {
     });
   });
 
-  it('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
+  it.skip('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
     const { container } = renderWithRouter(<App />, { route: cartepie });
 
     const imgJohtoRout30 = 'https://archives.bulbagarden.net/media/upload/7/76/Johto_Route_30_Map.png';
@@ -71,6 +71,29 @@ describe('Teste o componente <PokemonDetails.tsx />', () => {
         expect(imgElement.alt).toMatch(/caterpie location/i);
       }
     });
+  });
+
+  it('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
+    const { container } = renderWithRouter(<App />, { route: cartepie });
+
+    const srcimgJohtoRout30 = 'https://archives.bulbagarden.net/media/upload/7/76/Johto_Route_30_Map.png';
+    const srcimgJohtoRout31 = 'https://archives.bulbagarden.net/media/upload/2/2b/Johto_Route_31_Map.png';
+    const srcimgIlexForest = 'https://archives.bulbagarden.net/media/upload/a/ae/Johto_Ilex_Forest_Map.png';
+    const srcimgJohtoNationalPark = 'https://archives.bulbagarden.net/media/upload/4/4e/Johto_National_Park_Map.png';
+
+    const altImgLocations = /caterpie location/i;
+    const cardMaps = container.querySelectorAll('.card-map');
+    const imgElements = Array.from(cardMaps).map((cardMap) => cardMap.querySelector('img') as HTMLImageElement);
+
+    expect(imgElements[0].src).toBe(srcimgJohtoRout30);
+    expect(imgElements[1].src).toBe(srcimgJohtoRout31);
+    expect(imgElements[2].src).toBe(srcimgIlexForest);
+    expect(imgElements[3].src).toBe(srcimgJohtoNationalPark);
+
+    expect(imgElements[0].alt).toMatch(altImgLocations);
+    expect(imgElements[1].alt).toMatch(altImgLocations);
+    expect(imgElements[2].alt).toMatch(altImgLocations);
+    expect(imgElements[3].alt).toMatch(altImgLocations);
   });
 
   it('8. A página deve exibir um checkbox que permite favoritar o Pokémon.', () => {
