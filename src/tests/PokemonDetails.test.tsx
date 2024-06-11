@@ -52,7 +52,7 @@ describe('Teste o componente <PokemonDetails.tsx />', () => {
     });
   });
 
-  it.skip('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
+  it('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
     const { container } = renderWithRouter(<App />, { route: cartepie });
 
     const imgJohtoRout30 = 'https://archives.bulbagarden.net/media/upload/7/76/Johto_Route_30_Map.png';
@@ -63,17 +63,18 @@ describe('Teste o componente <PokemonDetails.tsx />', () => {
     const imgLocations = [imgJohtoRout30, imgJohtoRout31, imgIlexForest,
       imgJohtoNationalPark];
     const cardMaps = container.querySelectorAll('.card-map');
-    const imgElements = Array.from(cardMaps).map((cardMap) => cardMap.querySelector('img'));
+    expect(cardMaps.length).toBe(4);
 
-    imgElements.forEach((imgElement, i) => {
-      if (imgElement) {
-        expect(imgElement.src).toBe(imgLocations[i]);
-        expect(imgElement.alt).toMatch(/caterpie location/i);
-      }
+    /*     const imgElements = Array.from(cardMaps).map((cardMap) => cardMap.querySelector('img')); */
+
+    cardMaps.forEach((cardMap, i) => {
+      const imgElement = cardMap.querySelector('img') as HTMLImageElement;
+      expect(imgElement.src).toBe(imgLocations[i]);
+      expect(imgElement.alt).toMatch(/caterpie location/i);
     });
   });
 
-  it('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
+  it.skip('7. Deve ser exibida uma imagem do mapa em cada localização.', () => {
     const { container } = renderWithRouter(<App />, { route: cartepie });
 
     const srcimgJohtoRout30 = 'https://archives.bulbagarden.net/media/upload/7/76/Johto_Route_30_Map.png';
