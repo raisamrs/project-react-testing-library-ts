@@ -7,6 +7,7 @@ Enquanto uns caçavam pokémons, eu estava caçando *bugs* na **Pokédex**, apli
 ## Rodando a aplicação localmente:
 Você pode usar o [Visual Studio Code (vulgo VS Code)](https://code.visualstudio.com/download). Abra o terminal e siga os próximos passos:
 
+
 1. Clone o projeto.  Você pode fazer isso via **`HTTP`** ou via **`SSH`**.
 
 ### Via HTTP:
@@ -17,8 +18,10 @@ Você pode usar o [Visual Studio Code (vulgo VS Code)](https://code.visualstudio
 ```bash
   git clone git@github.com:raisamrs/project-react-testing-library-ts.git
 ```
+Observe a imagem abaixo:
+![Observe o gif](https://github.com/raisamrs/project-react-testing-library-ts/blob/main/src/assets/usando-o-vs-code.png)
 
-2. Entre no diretório do projeto
+2. Entre no diretório do projeto, digitando o comando abaixo no terminal:
 
 ```bash
   cd project-react-testing-library-ts
