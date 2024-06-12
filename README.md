@@ -2,7 +2,7 @@ React Testing Library - RTL 🕵️‍♀️🪲
 ===============	
 
 ## O que é?
-Enquanto uns caçavam pokémons, eu estava caçando *bugs* na **Pokédex**, aplicação desenvolvida pela Trybe, que usou a biblioteca [React](https://react.dev/) e consome dados da API [PokéAPI](https://pokeapi.co/)! Sendo assim, o objetivo deste projeto, é o desenvolvimento da cobertura de testes para a aplicação utilizando a [**RTL**](https://testing-library.com/docs/react-testing-library/intro) - biblioteca voltada para testes automatizados front-end em de aplicações desenvolvidas com React.
+Enquanto uns caçavam pokémons, eu estava caçando *bugs* na **Pokédex**, aplicação desenvolvida pela Trybe, que usou a biblioteca [React](https://react.dev/) e consome dados da API [PokéAPI](https://pokeapi.co/)! Sendo assim, o objetivo deste projeto, é o desenvolvimento da cobertura de testes para a aplicação utilizando a [**RTL**](https://testing-library.com/docs/react-testing-library/intro) - biblioteca voltada para testes automatizados front-end em aplicações desenvolvidas com React. ;)
 
 ## Rodando a aplicação localmente:
 Você pode usar o [Visual Studio Code (vulgo VS Code)](https://code.visualstudio.com/download). Abra o terminal e siga os próximos passos:
