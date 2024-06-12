@@ -86,7 +86,7 @@ Observe o gif abaixo:
 * Digite no terminal:
 
 ```bash
-  npm run cpverage
+  npm run coverage
 ```
 Observe o gif abaixo:
 ![Observe o gif](https://github.com/raisamrs/project-react-testing-library-ts/blob/main/src/assets/npm-run-coverage.gif)
