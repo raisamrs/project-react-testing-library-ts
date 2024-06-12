@@ -1,4 +1,4 @@
-React Testing Library - RTL 🕵️‍♀️🪲
+Pokédex: React Testing Library - RTL 🕵️‍♀️🪲
 ===============	
 
 ## O que é?
