@@ -71,13 +71,16 @@ Exemplo:
 ```bash
   npm run test About.test.tsx
 ```
+Observe o gif abaixo:
+![Observe o gif](https://github.com/raisamrs/project-react-testing-library-ts/blob/main/src/assets/npm-run-test-nome-do-arquivo.gif)
 ### Rodando todos os testes de todos os arquivos de teste:
 * Digite no terminal:
 
 ```bash
   npm run test
 ```
-
+Observe o gif abaixo:
+![Observe o gif](https://github.com/raisamrs/project-react-testing-library-ts/blob/main/src/assets/npm-run-test.gif)
 ## Verificando se todas as linhas de código foram cobertas:
 
 * Digite no terminal:
@@ -85,6 +88,8 @@ Exemplo:
 ```bash
   npm run cpverage
 ```
+Observe o gif abaixo:
+![Observe o gif](https://github.com/raisamrs/project-react-testing-library-ts/blob/main/src/assets/npm-run-coverage.gif)
 ## Autores:
 
 - Aplicação: [@trybe](https://github.com/tryber)
